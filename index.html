@@ -1,0 +1,215 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniya Thakur - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --primary-color: #0056b3;
+            --accent-color: #007bff;
+            --card-bg: #ffffff;
+            --card-shadow: 0 8px 16px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --primary-color: #60a5fa;
+            --accent-color: #3b82f6;
+            --card-bg: #1e293b;
+            --card-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); transition: var(--transition); line-height: 1.6; }
+        
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 1.5rem 5%; background: var(--card-bg); 
+            box-shadow: var(--card-shadow); position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); text-decoration: none; letter-spacing: -0.5px; }
+        .theme-toggle { 
+            background: var(--bg-color); border: none; font-size: 1.2rem; 
+            cursor: pointer; color: var(--text-color); padding: 8px 12px; 
+            border-radius: 20px; transition: var(--transition);
+        }
+        .theme-toggle:hover { background: var(--accent-color); color: white; }
+        
+        section { padding: 5rem 5%; max-width: 1100px; margin: auto; }
+        h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h2 { font-size: 2.2rem; margin-bottom: 2.5rem; text-align: center; color: var(--primary-color); position: relative; }
+        h2::after {
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--accent-color); margin: 10px auto 0; border-radius: 2px;
+        }
+        
+        .hero { text-align: center; padding: 8rem 5%; animation: fadeIn 1s ease-in; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem auto; opacity: 0.9; }
+        .btn { 
+            display: inline-block; padding: 0.8rem 2.5rem; 
+            background-color: var(--accent-color); color: #fff; 
+            text-decoration: none; border-radius: 30px; font-weight: 600; 
+            transition: var(--transition); box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4); }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .card { 
+            background: var(--card-bg); padding: 2.5rem; 
+            border-radius: 20px; box-shadow: var(--card-shadow); 
+            transition: var(--transition); border-top: 4px solid transparent;
+        }
+        .card:hover { transform: translateY(-8px); border-top: 4px solid var(--accent-color); }
+        .card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.4rem; }
+        .card ul { margin-left: 1.5rem; margin-top: 1rem; }
+        .card li { margin-bottom: 0.5rem; }
+        
+        .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .skill-tag { 
+            background: var(--accent-color); color: #fff; padding: 0.6rem 1.2rem; 
+            border-radius: 25px; font-size: 0.95rem; font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        footer { text-align: center; padding: 2rem; background: var(--card-bg); margin-top: 4rem; border-top: 1px solid rgba(0,0,0,0.05); }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
+        .social-links a { 
+            color: var(--text-color); text-decoration: none; font-weight: 600; 
+            padding: 0.5rem 1rem; border-radius: 8px; border: 1px solid var(--text-color);
+            transition: var(--transition);
+        }
+        .social-links a:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Taniya Thakur.</a>
+        <button class="theme-toggle" id="themeToggle" title="Toggle Light/Dark Mode">🌓 Theme</button>
+    </header>
+
+    <section class="hero">
+        <h1>Hi, I'm Taniya Thakur</h1>
+        <p>Computer Science Engineering student passionate about software development, artificial intelligence, and building innovative technological solutions.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <section id="about">
+        <h2>About & Education</h2>
+        <div class="card">
+            <p>I am a dedicated and eager B.Tech CSE student looking to leverage academic knowledge and practical project experience in a dynamic internship or entry-level role.</p>
+            <br>
+            <h3>Education</h3>
+            <ul>
+                <li><strong>B.Tech in Computer Science Engineering</strong><br>Baba Banda Singh Bahadur Engineering College (2023-2027)</li>
+                <li><strong>12th Grade (CBSE)</strong><br>St. Soldier Divine Public School (83.8%, 2023)</li>
+                <li><strong>10th Grade (CBSE)</strong><br>St. Soldier Divine Public School (66%, 2021)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">HTML & CSS</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Transformers</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Git & VS Code</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Artificial Intelligence</span>
+            <span class="skill-tag">Natural Language Processing</span>
+            <span class="skill-tag">Deep Learning</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Academic Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Cloud Cybersecurity Platform</h3>
+                <p>Explored and developed design architectures for a cloud cybersecurity platform, integrating log analysis using NLP, deep learning, and graph neural networks. Created interactive dashboards using Streamlit.</p>
+            </div>
+            <div class="card">
+                <h3>Air Monitoring System</h3>
+                <p>Developed a software solution to track and analyze air quality metrics using Python and data visualization libraries.</p>
+            </div>
+            <div class="card">
+                <h3>Student Placement Predictor</h3>
+                <p>Built a machine learning model to predict student placement probabilities based on historical academic and skill-based datasets.</p>
+            </div>
+            <div class="card">
+                <h3>Smartphone Price Predictor</h3>
+                <p>Applied machine learning algorithms to forecast smartphone prices based on hardware specifications and market trends.</p>
+            </div>
+            <div class="card">
+                <h3>AI Chatbot</h3>
+                <p>Designed and implemented a conversational AI chatbot framework to process natural language inputs and automate intelligent responses.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Training & Certifications</h2>
+        <div class="card">
+            <h3>Industrial Training</h3>
+            <p><strong>Future Finders (Mohali, Punjab)</strong> | <em>June 2025 - July 2025</em></p>
+            <ul>
+                <li>Completed an intensive 45-day program to enhance practical skills in Python, AI, and Machine Learning.</li>
+                <li>Gained hands-on experience applying theoretical concepts to real-world technical scenarios under industry guidance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <div class="card" style="text-align: center; border-top: none;">
+            <p style="margin-bottom: 2rem;">I am currently looking for internship and entry-level opportunities. Feel free to reach out!</p>
+            <div class="social-links">
+                <a href="mailto:taniyathakur346@gmail.com">Email Me</a>
+                <a href="https://linkedin.com/in/taniya-thakur" target="_blank">LinkedIn</a>
+                <a href="https://github.com/taniyathakur17" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Taniya Thakur. Built for GitHub Pages.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
