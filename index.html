@@ -1,9 +1,11 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taniya Thakur - Portfolio</title>
+    <!-- Adding FontAwesome for project icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         
@@ -51,6 +53,22 @@
         }
         
         .hero { text-align: center; padding: 8rem 5%; animation: fadeIn 1s ease-in; }
+        
+        /* Profile Image styling - ADDED */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--card-bg);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        [data-theme="dark"] .profile-img {
+            border-color: var(--card-bg);
+        }
+
         .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2.5rem auto; opacity: 0.9; }
         .btn { 
             display: inline-block; padding: 0.8rem 2.5rem; 
@@ -65,8 +83,18 @@
             background: var(--card-bg); padding: 2.5rem; 
             border-radius: 20px; box-shadow: var(--card-shadow); 
             transition: var(--transition); border-top: 4px solid transparent;
+            display: flex; flex-direction: column; /* Added for alignment */
         }
         .card:hover { transform: translateY(-8px); border-top: 4px solid var(--accent-color); }
+
+        /* Project Icons styling - ADDED */
+        .project-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
         .card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.4rem; }
         .card ul { margin-left: 1.5rem; margin-top: 1rem; }
         .card li { margin-bottom: 0.5rem; }
@@ -98,6 +126,8 @@
     </header>
 
     <section class="hero">
+        <!-- Added placeholder profile image -->
+        <img src="https://via.placeholder.com/150" alt="Taniya Thakur Profile" class="profile-img">
         <h1>Hi, I'm Taniya Thakur</h1>
         <p>Computer Science Engineering student passionate about software development, artificial intelligence, and building innovative technological solutions.</p>
         <a href="#projects" class="btn">View My Work</a>
@@ -139,22 +169,32 @@
         <h2>Academic Projects</h2>
         <div class="grid">
             <div class="card">
+                <!-- Added Icon -->
+                <i class="fas fa-cloud-shield-alt project-icon"></i>
                 <h3>Cloud Cybersecurity Platform</h3>
                 <p>Explored and developed design architectures for a cloud cybersecurity platform, integrating log analysis using NLP, deep learning, and graph neural networks. Created interactive dashboards using Streamlit.</p>
             </div>
             <div class="card">
+                <!-- Added Icon -->
+                <i class="fas fa-smog project-icon"></i>
                 <h3>Air Monitoring System</h3>
                 <p>Developed a software solution to track and analyze air quality metrics using Python and data visualization libraries.</p>
             </div>
             <div class="card">
+                <!-- Added Icon -->
+                <i class="fas fa-graduation-cap project-icon"></i>
                 <h3>Student Placement Predictor</h3>
                 <p>Built a machine learning model to predict student placement probabilities based on historical academic and skill-based datasets.</p>
             </div>
             <div class="card">
+                <!-- Added Icon -->
+                <i class="fas fa-mobile-alt project-icon"></i>
                 <h3>Smartphone Price Predictor</h3>
                 <p>Applied machine learning algorithms to forecast smartphone prices based on hardware specifications and market trends.</p>
             </div>
             <div class="card">
+                <!-- Added Icon -->
+                <i class="fas fa-robot project-icon"></i>
                 <h3>AI Chatbot</h3>
                 <p>Designed and implemented a conversational AI chatbot framework to process natural language inputs and automate intelligent responses.</p>
             </div>
